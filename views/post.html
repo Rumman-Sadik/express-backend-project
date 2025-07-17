@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Post Message</title>
+  <link rel="stylesheet" href="/public/post.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cors/2.8.5/cors.min.js"></script>
+</head>
+<body>
+  <h1>Post Message from post request:</h1>
+  <div id="postMessage"></div>
+  <script>
+    if (performance.navigation.type === 1) {
+      window.location.href = '/';
+    }
+    fetch('/api/message', { method: 'POST' })
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('postMessage').innerText = data;
+      });
+  </script>
+</body>
+</html>

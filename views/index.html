@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Message Display</title>
+  <link rel="stylesheet" href="/public/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cors/2.8.5/cors.min.js"></script>
+</head>
+<body>
+  <h1>Get Message from get request:</h1>
+  <div id="getMessage"></div>
+  <button id="postBtn">Go to Post Page</button>
+  <script>
+    fetch('/api/message', { method: 'GET' })
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('getMessage').innerText = data;
+      });
+
+    document.getElementById('postBtn').onclick = function() {
+      window.location.href = '/postpage';
+    };
+  </script>
+</body>
+</html>
