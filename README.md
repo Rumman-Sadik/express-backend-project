@@ -2,6 +2,7 @@
 
 Simple Express backend that fetches api messages from GET to POST method
 
-to initalize bash 
-  ` npm install
-  `npm run dev
+to initalize bash in terminal
+:
+  - npm install
+  - npm run dev
